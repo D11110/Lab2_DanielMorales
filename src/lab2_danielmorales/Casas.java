@@ -128,6 +128,14 @@ public class Casas {
         return nombre_ing;
     }
 
+    public int getNum_cuartos() {
+        return num_cuartos;
+    }
+
+    public void setNum_cuartos(int num_cuartos) {
+        this.num_cuartos = num_cuartos;
+    }
+
     public void setNombre_ing(String nombre_ing) {
         this.nombre_ing = nombre_ing;
     }
