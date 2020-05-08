@@ -39,7 +39,7 @@ public class CasasNuevas {
 
     @Override
     public String toString() {
-        return "CasasNuevas{" + "num_casa=" + num_casa + ", num_bloque=" + num_bloque + ", color=" + color + ", ancho=" + ancho + ", largo=" + largo + ", comprada=" + comprada + ", num_pisos=" + num_pisos + ", num_bath=" + num_bath + ", num_cuartos=" + num_cuartos + ", estado=" + estado + ", nombre_ing=" + nombre_ing + '}';
+        return "\nNumero de casa=" + num_casa + ", Numero de bloque=" + num_bloque + ", Color=" + color + "\nAncho"+ancho + ", Largo=" + largo + ", Comprada=" + comprada + "\n1Numero de pisos=" + num_pisos + ", Numero de banos=" + num_bath + ", Numero de cuartos=" + num_cuartos + ", Estado=" + estado + "\nNombre Ing a cargo=" + nombre_ing + "\n";
     }
 
     public int getNum_casa() {

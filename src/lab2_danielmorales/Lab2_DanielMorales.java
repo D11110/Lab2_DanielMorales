@@ -94,12 +94,20 @@ public class Lab2_DanielMorales {
                                     int num_cuartos = input.nextInt();
                                     System.out.println("Ingrese el estado: ");
                                     String estado = input.nextLine();
+                                    estado = input.nextLine();
                                     System.out.println("Ingrese el nombre del Ing a cargo: ");
                                     String nombre_ing = input.nextLine();
                                     CasasNuevas c = new CasasNuevas(num_casa, num_bloque, color, ancho, largo, comprada, num_pisos, num_bath, num_cuartos, estado, nombre_ing);
                                     Casas.add(c);
                                 }
                                
+                                break;
+                            case 2: 
+                                mostrar();
+                                break;
+                            case 3:
+                                mostrar();
+                                
                                 break;
                             default:
                                 throw new AssertionError();
@@ -139,7 +147,7 @@ public class Lab2_DanielMorales {
     public static void mostrar() {
 
         for (int i = 0; i < Casas.size(); i++) {
-            System.out.print(Casas.get(i));
+            System.out.print(i + "=" + Casas.get(i) + "\n");
         }
     }
 }
