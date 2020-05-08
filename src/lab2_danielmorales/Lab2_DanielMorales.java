@@ -22,49 +22,54 @@ public class Lab2_DanielMorales {
 
             switch (op) {
                 case 1: {
-                    System.out.println("Menu secundario");
-                    System.out.println("1. Crear casas");
-                    System.out.println("2. Listar casas");
-                    System.out.println("3. Modificar casas");
-                    System.out.println("4. Borrar casas");
-                    int op1 = input.nextInt();
-                    switch (op1) {
-                        case 1:
-                            System.out.println("Su casa ya fue comprada anteriormente? (s/n)");
-                            char prev_ow_check = input.next().charAt(0);
-                            if (prev_ow_check == 's') {
-                                System.out.println("Ingrese numero de casa:");
-                                int num_casa = input.nextInt();
-                                System.out.println("Ingrese numero de bloque");
-                                int num_bloque = input.nextInt();
-                                System.out.println("Ingrese color:");
-                                String color = input.next();
-                                System.out.println("Ingrese el ancho:");
-                                int ancho = input.nextInt();
-                                System.out.println("Ingrese el largo:");
-                                int largo = input.nextInt();
-                                System.out.println("Ingrese numero de pisos:");
-                                int num_pisos = input.nextInt();
-                                System.out.println("Ingrese numero de baths: ");
-                                int num_bath = input.nextInt();
-                                System.out.println("Ingrese numero de cuartos: ");
-                                int num_cuartos = input.nextInt();
-                                System.out.println("Ingrese el nombre del dueno anterior:");
-                                String prev_owner = input.nextLine();
-                                prev_owner = input.nextLine();
-                                System.out.println("Ingrese el estado: ");
-                                String estado = input.nextLine();
-                                System.out.println("Ingrese el nombre del Ing a cargo: ");
-                                String nombre_ing = input.nextLine();
-                                Casas c = new Casas(num_casa, num_bloque, color, ancho, largo, true, num_pisos, num_bath, num_cuartos, prev_owner, estado, nombre_ing);
-                                Casas.add(c);
-                                mostrar();
+                    if (Auth) {
+                        System.out.println("Menu secundario");
+                        System.out.println("1. Crear casas");
+                        System.out.println("2. Listar casas");
+                        System.out.println("3. Modificar casas");
+                        System.out.println("4. Borrar casas");
+                        int op1 = input.nextInt();
+                        switch (op1) {
+                            case 1:
+                                System.out.println("Su casa ya fue comprada anteriormente? (s/n)");
+                                char prev_ow_check = input.next().charAt(0);
+                                if (prev_ow_check == 's') {
+                                    System.out.println("Ingrese numero de casa:");
+                                    int num_casa = input.nextInt();
+                                    System.out.println("Ingrese numero de bloque");
+                                    int num_bloque = input.nextInt();
+                                    System.out.println("Ingrese color:");
+                                    String color = input.next();
+                                    System.out.println("Ingrese el ancho:");
+                                    int ancho = input.nextInt();
+                                    System.out.println("Ingrese el largo:");
+                                    int largo = input.nextInt();
+                                    System.out.println("Ingrese numero de pisos:");
+                                    int num_pisos = input.nextInt();
+                                    System.out.println("Ingrese numero de baths: ");
+                                    int num_bath = input.nextInt();
+                                    System.out.println("Ingrese numero de cuartos: ");
+                                    int num_cuartos = input.nextInt();
+                                    System.out.println("Ingrese el nombre del dueno anterior:");
+                                    String prev_owner = input.nextLine();
+                                    prev_owner = input.nextLine();
+                                    System.out.println("Ingrese el estado: ");
+                                    String estado = input.nextLine();
+                                    System.out.println("Ingrese el nombre del Ing a cargo: ");
+                                    String nombre_ing = input.nextLine();
+                                    Casas c = new Casas(num_casa, num_bloque, color, ancho, largo, true, num_pisos, num_bath, num_cuartos, prev_owner, estado, nombre_ing);
+                                    Casas.add(c);
+                                    mostrar();
 
-                            }
-                            break;
-                        default:
-                            throw new AssertionError();
+                                }
+                                break;
+                            default:
+                                throw new AssertionError();
+                        }
+                    } else{
+                        System.out.println("Su usuario no ha sido autenticado");
                     }
+
                 }
                 break;
                 case 2:
@@ -74,9 +79,10 @@ public class Lab2_DanielMorales {
                     String usuario = input.next();
                     if (usuario.equals("leobanegas")) {
                         System.out.println("Ingrese la contra:");
-                        String pass = input.next();
-                        if (pass.equals(99)) {
+                        int pass = input.nextInt();
+                        if (pass==99) {
                             Auth = true;
+                            System.out.println("Usuario autenticado.");
                         } else {
                             System.out.println("Password incorrecta");
                         }
@@ -94,7 +100,7 @@ public class Lab2_DanielMorales {
 
     public static void mostrar() {
 
-        for (int i=0; i<Casas.size();i++) {
+        for (int i = 0; i < Casas.size(); i++) {
             System.out.print(Casas.get(i));
         }
     }
