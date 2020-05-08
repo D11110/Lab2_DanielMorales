@@ -8,6 +8,10 @@ public class Lab2_DanielMorales {
     static Scanner input = new Scanner(System.in);
     static ArrayList Casas = new ArrayList();
     static boolean Auth = false;
+    static int contListas;
+    static int contConstruccion;
+    static int contConstruccionEsp;
+    static int contEsperaDem;
 
     public static void main(String[] args) {
         char resp = 's';
@@ -36,14 +40,30 @@ public class Lab2_DanielMorales {
                                 if (prev_ow_check == 's') {
                                     System.out.println("Ingrese numero de casa:");
                                     int num_casa = input.nextInt();
+                                    while (num_casa < 0) {
+                                        System.out.println("Ingrese numero de casa:");
+                                        num_casa = input.nextInt();
+                                    }
                                     System.out.println("Ingrese numero de bloque");
                                     int num_bloque = input.nextInt();
+                                    while (num_bloque < 0) {
+                                        System.out.println("Ingrese numero de bloque:");
+                                        num_bloque = input.nextInt();
+                                    }
                                     System.out.println("Ingrese color:");
                                     String color = input.next();
                                     System.out.println("Ingrese el ancho:");
                                     int ancho = input.nextInt();
+                                    while (ancho < 0) {
+                                        System.out.println("Ingrese el ancho:");
+                                        ancho = input.nextInt();
+                                    }
                                     System.out.println("Ingrese el largo:");
                                     int largo = input.nextInt();
+                                    while (largo < 0) {
+                                        System.out.println("Ingrese el largo:");
+                                        largo = input.nextInt();
+                                    }
                                     System.out.println("Ya ha sido comprada? (s/n)");
                                     char compradaChar = input.next().charAt(0);
                                     boolean comprada;
@@ -54,15 +74,36 @@ public class Lab2_DanielMorales {
                                     }
                                     System.out.println("Ingrese numero de pisos:");
                                     int num_pisos = input.nextInt();
+                                    while (num_pisos < 0) {
+                                        System.out.println("Ingrese numero de pisos:");
+                                        num_pisos = input.nextInt();
+                                    }
                                     System.out.println("Ingrese numero de baths: ");
                                     int num_bath = input.nextInt();
+                                    while (num_bath < 0) {
+                                        System.out.println("Ingrese numero de bathrooms:");
+                                        num_bath = input.nextInt();
+                                    }
                                     System.out.println("Ingrese numero de cuartos: ");
                                     int num_cuartos = input.nextInt();
+                                    while (num_cuartos < 0) {
+                                        System.out.println("Ingrese numero de cuartos:");
+                                        num_cuartos = input.nextInt();
+                                    }
                                     System.out.println("Ingrese el nombre del dueno anterior:");
                                     String prev_owner = input.nextLine();
                                     prev_owner = input.nextLine();
-                                    System.out.println("Ingrese el estado: ");
+                                    System.out.println("Ingrese el estado: (LISTA, CONSTRUCCION, CONSTRUCCION EN ESPERA, ESPERA DE DEMOLICION)");
                                     String estado = input.nextLine();
+                                    int e = 0;
+                                    while (e == 0) {
+                                        if (estado.equalsIgnoreCase("lista") || estado.equalsIgnoreCase("construccion") || estado.equalsIgnoreCase("construccion en espera") || estado.equalsIgnoreCase("espera de demolicion")) {
+                                            e = 1;
+                                        } else {
+                                            System.out.println("Ingrese el estado valido: ");
+                                            estado = input.nextLine();
+                                        }
+                                    }
                                     System.out.println("Ingrese el nombre del Ing a cargo: ");
                                     String nombre_ing = input.nextLine();
                                     Casas c = new Casas(num_casa, num_bloque, color, ancho, largo, comprada, num_pisos, num_bath, num_cuartos, prev_owner, estado, nombre_ing);
@@ -70,14 +111,30 @@ public class Lab2_DanielMorales {
                                 } else if (prev_ow_check == 'n') {
                                     System.out.println("Ingrese numero de casa:");
                                     int num_casa = input.nextInt();
+                                    while (num_casa < 0) {
+                                        System.out.println("Ingrese numero de casa:");
+                                        num_casa = input.nextInt();
+                                    }
                                     System.out.println("Ingrese numero de bloque");
                                     int num_bloque = input.nextInt();
+                                    while (num_bloque < 0) {
+                                        System.out.println("Ingrese numero de bloque:");
+                                        num_bloque = input.nextInt();
+                                    }
                                     System.out.println("Ingrese color:");
                                     String color = input.next();
                                     System.out.println("Ingrese el ancho:");
                                     int ancho = input.nextInt();
+                                    while (ancho < 0) {
+                                        System.out.println("Ingrese el ancho:");
+                                        ancho = input.nextInt();
+                                    }
                                     System.out.println("Ingrese el largo:");
                                     int largo = input.nextInt();
+                                    while (largo < 0) {
+                                        System.out.println("Ingrese el largo:");
+                                        largo = input.nextInt();
+                                    }
                                     System.out.println("Ya ha sido comprada? (s/n)");
                                     char compradaChar = input.next().charAt(0);
                                     boolean comprada;
@@ -88,13 +145,34 @@ public class Lab2_DanielMorales {
                                     }
                                     System.out.println("Ingrese numero de pisos:");
                                     int num_pisos = input.nextInt();
+                                    while (num_pisos < 0) {
+                                        System.out.println("Ingrese numero de pisos:");
+                                        num_pisos = input.nextInt();
+                                    }
                                     System.out.println("Ingrese numero de baths: ");
                                     int num_bath = input.nextInt();
+                                    while (num_bath < 0) {
+                                        System.out.println("Ingrese numero de bathrooms:");
+                                        num_bath = input.nextInt();
+                                    }
                                     System.out.println("Ingrese numero de cuartos: ");
                                     int num_cuartos = input.nextInt();
-                                    System.out.println("Ingrese el estado: ");
+                                    while (num_cuartos < 0) {
+                                        System.out.println("Ingrese numero de cuartos:");
+                                        num_cuartos = input.nextInt();
+                                    }
+                                    System.out.println("Ingrese el estado: (LISTA, CONSTRUCCION, CONSTRUCCION EN ESPERA, ESPERA DE DEMOLICION)");
                                     String estado = input.nextLine();
                                     estado = input.nextLine();
+                                    int e = 0;
+                                    while (e == 0) {
+                                        if (estado.equalsIgnoreCase("lista") || estado.equalsIgnoreCase("construccion") || estado.equalsIgnoreCase("construccion en espera") || estado.equalsIgnoreCase("espera de demolicion")) {
+                                            e = 1;
+                                        } else {
+                                            System.out.println("Ingrese el estado valido: ");
+                                            estado = input.nextLine();
+                                        }
+                                    }
                                     System.out.println("Ingrese el nombre del Ing a cargo: ");
                                     String nombre_ing = input.nextLine();
                                     CasasNuevas c = new CasasNuevas(num_casa, num_bloque, color, ancho, largo, comprada, num_pisos, num_bath, num_cuartos, estado, nombre_ing);
@@ -237,7 +315,7 @@ public class Lab2_DanielMorales {
                                     }
                                     break;
                                     case 10: {
-                                        int poss= opcion1;
+                                        int poss = opcion1;
                                         System.out.println("Ingrese el nuevo nombre del Ing a cargo:");
                                         String nombre_ing = input.nextLine();
                                         if (Casas.get(opcion1) instanceof Casas) {
@@ -255,7 +333,7 @@ public class Lab2_DanielMorales {
                             case 4:
                                 mostrar();
                                 System.out.println("Ingrese la casa que desea eliminar:");
-                                int casaAElim = input.nextInt() -1;
+                                int casaAElim = input.nextInt() - 1;
                                 Casas.remove(casaAElim);
                                 break;
 
@@ -269,8 +347,106 @@ public class Lab2_DanielMorales {
                 }
                 break;
 
-                case 2:
+                case 2: {
+                    mostrarEstados();
+
+                    System.out.println("Seleccione el indice del estado de casa que desea modificar: ");
+                    int numcasa = input.nextInt() - 1;
+
+                    if (Casas.get(numcasa) instanceof Casas) {
+                        contadorEstadosCasa(numcasa);
+                        if (contConstruccion <= 5 && contEsperaDem <= 3) {
+                            if (((Casas) Casas.get(numcasa)).getEstado().equalsIgnoreCase("espera de demolicion")) {
+                                System.out.println("Ingrese el nuevo estado: ");
+                                String estado = input.nextLine();
+                                if (estado.equalsIgnoreCase("demolida")) {
+                                    ((Casas) Casas.get(numcasa)).setEstado(estado);
+                                } else {
+                                    System.out.println("Estado solo puede ser cambiado a DEMOLIDA");
+                                }
+                            } else if (((Casas) Casas.get(numcasa)).getEstado().equalsIgnoreCase("lista")) {
+                                System.out.println("Ingrese el nuevo estado: ");
+                                String estado = input.nextLine();
+                                if (estado.equalsIgnoreCase("espera de demolicion")) {
+                                    ((Casas) Casas.get(numcasa)).setEstado(estado);
+                                } else {
+                                    System.out.println("Estado solo puede ser cambiado a ESPERA DE DEMOLICION");
+                                }
+
+                            } else if (((Casas) Casas.get(numcasa)).getEstado().equalsIgnoreCase("construccion en espera")) {
+                                System.out.println("Ingrese el nuevo estado: ");
+                                String estado = input.nextLine();
+                                if (estado.equalsIgnoreCase("construccion")) {
+                                    ((Casas) Casas.get(numcasa)).setEstado(estado);
+                                } else {
+                                    System.out.println("Estado solo puede ser cambiado a CONSTRUCCION");
+                                }
+                            } else if (((Casas) Casas.get(numcasa)).getEstado().equalsIgnoreCase("construccion")) {
+                                System.out.println("Ingrese el nuevo estado: ");
+                                String estado = input.nextLine();
+                                if (estado.equalsIgnoreCase("construccion en espera") || estado.equalsIgnoreCase("lista")) {
+                                    ((Casas) Casas.get(numcasa)).setEstado(estado);
+                                } else {
+                                    System.out.println("Estado solo puede ser cambiado a CONSTRUCCION EN ESPERA o a LISTA");
+                                }
+                            }
+                        }
+                    } else if (Casas.get(numcasa) instanceof CasasNuevas) {
+                        contadorEstadosCasa(numcasa);
+                        System.out.println("Seleccione el indice del estado de casa que desea modificar: ");
+                        int numcasa1 = input.nextInt() - 1;
+
+                        if (Casas.get(numcasa1) instanceof Casas) {
+                            contadorEstadosCasa(numcasa1);
+                            if (contConstruccion <= 5 && contEsperaDem <= 3) {
+                                if (((CasasNuevas) Casas.get(numcasa1)).getEstado().equalsIgnoreCase("espera de demolicion")) {
+                                    System.out.println("Ingrese el nuevo estado: ");
+                                    String estado = input.nextLine();
+                                    if (estado.equalsIgnoreCase("demolida")) {
+                                        ((CasasNuevas) Casas.get(numcasa1)).setEstado(estado);
+                                    } else {
+                                        System.out.println("Estado solo puede ser cambiado a DEMOLIDA");
+                                    }
+                                } else if (((CasasNuevas) Casas.get(numcasa1)).getEstado().equalsIgnoreCase("lista")) {
+                                    System.out.println("Ingrese el nuevo estado: ");
+                                    String estado = input.nextLine();
+                                    if (estado.equalsIgnoreCase("espera de demolicion")) {
+                                        ((CasasNuevas) Casas.get(numcasa1)).setEstado(estado);
+                                    } else {
+                                        System.out.println("Estado solo puede ser cambiado a ESPERA DE DEMOLICION");
+                                    }
+
+                                } else if (((CasasNuevas) Casas.get(numcasa1)).getEstado().equalsIgnoreCase("construccion en espera")) {
+                                    System.out.println("Ingrese el nuevo estado: ");
+                                    String estado = input.nextLine();
+                                    if (estado.equalsIgnoreCase("construccion")) {
+                                        ((CasasNuevas) Casas.get(numcasa1)).setEstado(estado);
+                                    } else {
+                                        System.out.println("Estado solo puede ser cambiado a CONSTRUCCION");
+                                    }
+                                } else if (((CasasNuevas) Casas.get(numcasa1)).getEstado().equalsIgnoreCase("construccion")) {
+                                    System.out.println("Ingrese el nuevo estado: ");
+                                    String estado = input.nextLine();
+                                    if (estado.equalsIgnoreCase("construccion en espera") || estado.equalsIgnoreCase("lista")) {
+                                        ((CasasNuevas) Casas.get(numcasa1)).setEstado(estado);
+                                    } else {
+                                        System.out.println("Estado solo puede ser cambiado a CONSTRUCCION EN ESPERA o a LISTA");
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    for (int i = 0; i < Casas.size(); i++) {
+                        if (((CasasNuevas) Casas.get(i)).getEstado().equalsIgnoreCase("demolida")) {
+                            Casas.remove(i);
+                        } else if (((Casas) Casas.get(i)).getEstado().equalsIgnoreCase("demolida")) {
+                            Casas.remove(i);
+                        }
+                    }
+
                     break;
+                }
+
                 case 3:
                     System.out.println("Ingrese el usuario: ");
                     String usuario = input.next();
@@ -299,6 +475,31 @@ public class Lab2_DanielMorales {
 
         for (int i = 0; i < Casas.size(); i++) {
             System.out.print(i + 1 + "=" + Casas.get(i) + "\n");
+        }
+    }
+
+    public static void contadorEstadosCasa(int cas) {
+        for (int i = 0; i < 1; i++) {
+            if (((Casas) Casas.get(cas)).getEstado().equalsIgnoreCase("lista")) {
+                contListas++;
+            } else if (((Casas) Casas.get(cas)).getEstado().equalsIgnoreCase("construccion")) {
+                contConstruccion++;
+            } else if (((Casas) Casas.get(cas)).getEstado().equalsIgnoreCase("construccion en espera")) {
+                contConstruccionEsp++;
+            } else if (((Casas) Casas.get(cas)).getEstado().equalsIgnoreCase("espera de demolicion")) {
+                contEsperaDem++;
+            }
+        }
+    }
+
+    public static void mostrarEstados() {
+        for (int i = 0; i < Casas.size(); i++) {
+            if (Casas.get(i) instanceof Casas) {
+                System.out.println(i + 1 + ". " + ((Casas) Casas.get(i)).getColor() + " - " + ((Casas) Casas.get(i)).getEstado());
+
+            } else if (Casas.get(i) instanceof CasasNuevas) {
+                System.out.println(i + 1 + ". " + ((CasasNuevas) Casas.get(i)).getColor() + " - " + ((CasasNuevas) Casas.get(i)).getEstado());
+            }
         }
     }
 }
